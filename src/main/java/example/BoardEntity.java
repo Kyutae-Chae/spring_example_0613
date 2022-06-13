@@ -21,25 +21,4 @@ public class BoardEntity {
     private int readcnt;
     @Column(name = "createuser")
     private String createuser;
-
-//    public Long getIdBoard() {
-//        return idBoard;
-//    }
-//
-//    public int getRead_cnt() {
-//        return readcnt;
-//    }
-//
-//    public String getCreate_user() {
-//        return createuser;
-//    }
-//
-//    public String getTitle() {
-//        return title;
-//    }
-//
-//    public String getContents() {
-//        return contents;
-//    }
-
 }

@@ -9,6 +9,6 @@ public class Board {
     private Long idBoard;
     private String title;
     private String contents;
-    private int read_cnt;
-    private String create_user;
+    private int readcnt;
+    private String createuser;
 }
