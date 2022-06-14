@@ -17,8 +17,6 @@ public class BoardEntity {
     private Long idBoard;
     private String title;
     private String contents;
-    @Column(name = "readcnt")
     private int readcnt;
-    @Column(name = "createuser")
     private String createuser;
 }
