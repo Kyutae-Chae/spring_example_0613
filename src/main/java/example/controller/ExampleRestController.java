@@ -15,13 +15,11 @@ public class ExampleRestController {
     BoardRepository boardRepository;
 
     @GetMapping("/contents")
-    @ResponseBody
     public List<BoardEntity> getBoardList() {
         return boardRepository.findAll();
     }
 
     @GetMapping("/content/{boardId}")
-    @ResponseBody
     public BoardEntity getBoard(@PathVariable("boardId") long boardId) {
         BoardEntity be = boardRepository.getById(boardId);
         be.setReadcnt(be.getReadcnt() + 1);
@@ -30,7 +28,6 @@ public class ExampleRestController {
     }
 
     @PostMapping("/content")
-    @ResponseBody
     public BoardEntity createBoard(@RequestBody Board board) {
         BoardEntity b = new BoardEntity();
         b.setTitle(board.getTitle());
@@ -41,7 +38,6 @@ public class ExampleRestController {
     }
 
     @PatchMapping("/content/{boardId}")
-    @ResponseBody
     public BoardEntity updateBoard(@RequestBody Board board, @PathVariable("boardId") long boardId) {
         System.out.println("board.getTitle() = " + board.getTitle());
         System.out.println("board.getContents() = " + board.getContents());
@@ -55,7 +51,6 @@ public class ExampleRestController {
     }
 
     @DeleteMapping("/content/{boardId}")
-    @ResponseBody
     public boolean deleteBoard(@PathVariable("boardId") long boardId) {
         if (boardRepository.findById(boardId).isPresent()) {
             boardRepository.deleteById(boardId);
